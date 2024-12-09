@@ -38,3 +38,44 @@ const D =()=>{
 }
 
 C(D)
+
+
+const posts=[
+    {id:1,title:"introduction"},
+    {id:2,title:"chapter 1"}
+]
+
+const getPosts=()=>{
+    let lis=""
+    setTimeout(()=>{
+        posts.forEach(post=>{
+            lis+= `<li> ${post.id} - ${post.title} </li> `
+        })
+        document.getElementById("postlist").innerHTML=lis;
+
+    },1000)
+    
+}
+
+
+
+
+const addPost=(post,callback)=>{
+
+    setTimeout(() => {
+        posts.push(post);
+        callback();
+    }, 2000);
+
+   
+
+}
+
+addPost(
+    {id:3,title:"chapter 2"}
+,getPosts)
+
+
+
+
+
