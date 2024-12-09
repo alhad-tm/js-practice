@@ -47,6 +47,14 @@ var kx= setInterval(()=>{
     
 },1000)
 
-setTimeout(()=>{
- document.getElementById("star").innerHTML="stars"
-},3000)
+
+function loop(){
+    setTimeout(()=>{
+        document.getElementById("star").innerHTML="stars"
+        loop()
+       },2000)
+}
+
+loop()
+
+  
